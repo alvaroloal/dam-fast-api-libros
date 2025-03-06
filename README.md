@@ -6,9 +6,9 @@
 3. Activar el entorno virtual:
      - powershell: `.venv\Scripts\Activate.ps1`.
      - bash: `.venv\Scripts\Activate`
-5. Instalar librerias con: `pip install -r requirements.txt`
-6. Ejecuta el proyecto desde el directorio raiz con: `uvicorn main:app --reload`
-7. Cada vez que se instale una dependencia hay que actualizar el fichero de requisitos con el comando `pip freeze > requirements.txt`
+4. Instalar librerias con: `pip install -r requirements.txt`
+5. Ejecuta el proyecto desde el directorio raiz con: `uvicorn main:app --reload`
+6. Cada vez que se instale una dependencia hay que actualizar el fichero de requisitos con el comando `pip freeze > requirements.txt`.
 
 ## Flujo de seguridad: 
 - Aplicación FastAPI securizada utilizando OAuth2 y JWT.
