@@ -2,8 +2,13 @@
 
 ## Inicializar el proyecto:
 1. Clona el repositorio en un directorio local.
-2. Instala librerias con: `pip install PyJWT` - `pip install passlib[bcrypt]`
-3. Ejecuta el proyecto desde el directorio raiz con: `uvicorn main:app --reload`
+2. Crear el entorno virtual con el comando `python -m venv .venv`.
+3. Activar el entorno virtual:
+     - powershell: `.venv\Scripts\Activate.ps1`.
+     - bash: `.venv\Scripts\Activate`
+5. Instalar librerias con: `pip install -r requirements.txt`
+6. Ejecuta el proyecto desde el directorio raiz con: `uvicorn main:app --reload`
+7. Cada vez que se instale una dependencia hay que actualizar el fichero de requisitos con el comando `pip freeze > requirements.txt`
 
 ## Flujo de seguridad: 
 - Aplicación FastAPI securizada utilizando OAuth2 y JWT.
