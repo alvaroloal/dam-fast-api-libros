@@ -6,13 +6,17 @@
 3. Ejecuta el proyecto desde el directorio raiz con: `uvicorn main:app --reload`
 
 ## Flujo de seguridad: 
-- Si accedo con un usuario activo (alvaro) puedo acceder a la rutas securizadas.
-- Para todas las peticiones CRUD de los libros no hay que estar logueado.
+- Aplicación FastAPI securizada utilizando OAuth2 y JWT.
+- Si accedo con un usuario activo puedo acceder a la rutas securizadas.
+- Para todas las peticiones CRUD de los libros no hay que estar autenticado ya que no están securizadas.
 
 ## Probar con Swagger:
-- Primero hay que loguearse (para loguearse solo hay que ejecutar la peticion POST /token introduciendo un username y passw que exista en la bbdd de users) para obtener el token y teniendo el token ya puedes acceder a traves del botón Authorize de Swagger.
-- Poner usuario y contraseña y ya puedes accder a las rutas securizadas.
-- user: alvaro pw: secret
+- Botón de autorización: se abre un formulario de autorización para escribir username y password.
+- Hay que acceder con un usuario que exista en la base de datos (alvaro).
+- La API verifica el username y password, y devuelve un "token".
+- Con las credenciales: user: `alvaro` pw: `secret` devolvera la autenticación.
+- Habiendo recibo el token ya se puede acceder a las rutas securizadas: `/users/me` - `/users/me/items/` y obtiene la información del usuario.
+- Si se cierra la sesión y se intenta acceder a rutas securizadas se recibe: "Not authenticated".
 
 ## Documentación:
 Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
