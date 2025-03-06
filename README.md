@@ -12,3 +12,6 @@
 ## Documentación
 Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
 Redocly: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+## Colección de Postman
+[Fast-Api-Libros.postman_collection.json](docs/Fast-Api-Libros.postman_collection.json)
