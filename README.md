@@ -1,7 +1,6 @@
 # FAST-API-LIBROS
 
-## Inicializar el proyecto
-
+## Inicializar el proyecto:
 1. Clona el repositorio en un directorio local.
 2. Instala librerias con: `pip install PyJWT` - `pip install passlib[bcrypt]`
 3. Ejecuta el proyecto desde el directorio raiz con: `uvicorn main:app --reload`
