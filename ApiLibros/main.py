@@ -43,19 +43,14 @@ if __name__ == "__main__":
     
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")#tokenUrl es la ruta donde se envía el usuario y contraseña para obtener el token
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 @app.get("/items/")
 async def read_items(token: Annotated[str, Depends(oauth2_scheme)]):
     return {"token": token}
 
 
-# flujo de seguridad: si accedo con un usuario activo(alvaro) puedo acceder a la rutas con el decorador Depends
-# para todas las peticiones CRUD de los libros no hay que estar logueado
-# Probar con Swagger:
-# primero hay que loguearse (para loguearse solo hay que ejecutar la peticion POST /token introduciendo un username y passw que exista en la bbdd de users ) para obtener el token y teniendo el token ya puedes acceder a traves del boton Authorize de Swagger
-# poner usuario y contraseña y ya puedes accder a las rutas con el decorador Depends
-# user: alvaro pw: secret
+
 fake_users_db = {
     "alvaro": {
         "username": "alvaro",
